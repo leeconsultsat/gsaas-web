@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" style=""><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DAVE System - Terms and Conditions</title>
+    <!-- Importing Pico CSS for basic normalization -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+
+    <style>
+      :root {
+        --primary-navy: #1a2533;
+        --accent-blue: #2e86c1;
+        --danger-red: #e74c3c;
+        --danger-bg: #fff3f3;
+        --bg-color: #f5f7fa;
+        --text-main: #333333;
+        --text-muted: #64748b;
+        --border-color: #e2e8f0;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        background-color: var(--bg-color);
+        font-family:
+          system-ui,
+          -apple-system,
+          'Segoe UI',
+          Roboto,
+          Helvetica,
+          Arial,
+          sans-serif;
+        margin: 0;
+        padding: 0;
+        color: var(--text-main);
+        line-height: 1.6;
+      }
+
+      /* Overriding any Pico CSS container constraints for full-width components */
+      main {
+        padding: 0;
+      }
+
+      /* Site Header */
+      .site-header {
+        background-color: var(--primary-navy);
+        color: #ffffff;
+        padding: 16px 5%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        position: sticky;
+        top: 0;
+        z-index: 100;
+      }
+
+      .site-header .brand {
+        font-size: 1.4rem;
+        font-weight: 700;
+        letter-spacing: 1px;
+        margin: 0;
+      }
+
+      .site-header a.back-link {
+        color: #ffffff;
+        text-decoration: none;
+        font-size: 0.95rem;
+        font-weight: 500;
+      }
+
+      .site-header a.back-link:hover {
+        text-decoration: underline;
+      }
+
+      /* Layout */
+      .layout-container {
+        display: flex;
+        gap: 40px;
+        max-width: 1200px;
+        margin: 40px auto;
+        padding: 0 20px;
+        align-items: flex-start;
+      }
+
+      /* Sidebar Navigation */
+      .sidebar {
+        flex: 0 0 260px;
+        position: sticky;
+        top: 100px; /* Account for sticky header */
+        background: #ffffff;
+        border-right: 1px solid var(--border-color);
+        padding: 24px;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+      }
+
+      .sidebar-title {
+        font-size: 0.85rem;
+        text-transform: uppercase;
+        color: var(--text-muted);
+        font-weight: 700;
+        margin-bottom: 16px;
+        display: block;
+        letter-spacing: 0.5px;
+      }
+
+      .nav-links {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .nav-links li {
+        margin-bottom: 12px;
+      }
+
+      .nav-links a {
+        text-decoration: none;
+        color: #475569;
+        font-size: 0.95rem;
+        display: block;
+        transition: color 0.2s ease;
+      }
+
+      .nav-links a:hover {
+        color: var(--accent-blue);
+        font-weight: 600;
+      }
+
+      /* Mobile Dropdown Nav (Hidden on Desktop) */
+      .mobile-nav {
+        display: none;
+        background: #ffffff;
+        border: 1px solid var(--border-color);
+        border-radius: 8px;
+        padding: 16px;
+        margin-bottom: 20px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+      }
+
+      .mobile-nav summary {
+        font-weight: 600;
+        color: var(--primary-navy);
+        cursor: pointer;
+        list-style: none;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      /* Main Content Area */
+      .main-content {
+        flex: 1;
+        background: #ffffff;
+        max-width: 860px;
+        border-radius: 8px;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+        padding: 50px 60px;
+      }
+
+      .page-header {
+        margin-bottom: 40px;
+        border-bottom: 1px solid var(--border-color);
+        padding-bottom: 24px;
+      }
+
+      .badge {
+        display: inline-block;
+        background-color: var(--border-color);
+        color: #334155;
+        padding: 4px 12px;
+        border-radius: 16px;
+        font-size: 0.8rem;
+        font-weight: 700;
+        margin-bottom: 16px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+
+      .main-content h1 {
+        font-size: 2.4rem;
+        color: var(--primary-navy);
+        margin: 0 0 8px 0;
+        line-height: 1.2;
+        border: none;
+        text-align: left;
+        text-transform: none;
+        padding: 0;
+      }
+
+      .subtitle {
+        font-size: 1.15rem;
+        color: var(--text-muted);
+        margin: 0 0 20px 0;
+        font-weight: 500;
+      }
+
+      .intro-text {
+        font-size: 1rem;
+        color: var(--text-main);
+        margin: 0;
+      }
+
+      .main-content h2 {
+        font-size: 1.5rem;
+        color: var(--primary-navy);
+        font-weight: 700;
+        border-bottom: none;
+        border-left: 3px solid var(--accent-blue);
+        padding-left: 14px;
+        margin-top: 48px;
+        margin-bottom: 16px;
+        line-height: 1.3;
+      }
+
+      .main-content p {
+        margin-bottom: 1.2rem;
+      }
+
+      .main-content ul {
+        margin-bottom: 1.5rem;
+        padding-left: 24px;
+      }
+
+      .main-content li {
+        margin-bottom: 0.6rem;
+      }
+
+      strong {
+        color: #0f172a;
+      }
+
+      /* Important Callouts (Sections 3 & 4) */
+      .important-callout {
+        background-color: var(--danger-bg);
+        border-left: 4px solid var(--danger-red);
+        padding: 24px 30px;
+        margin: 40px 0;
+        border-radius: 0 8px 8px 0;
+      }
+
+      .important-callout h2 {
+        border-left: none;
+        padding-left: 0;
+        margin-top: 0;
+        color: var(--danger-red);
+      }
+
+      .important-callout p:last-child {
+        margin-bottom: 0;
+      }
+
+      /* Placeholder Style */
+      .contact-placeholder {
+        background-color: #fffde7;
+        padding: 6px 12px;
+        border-radius: 4px;
+        color: #856404;
+        font-style: italic;
+        border: 1px solid #ffeeba;
+        display: inline-block;
+        font-weight: 500;
+        word-break: break-word;
+      }
+
+      /* Final Disclaimer Box */
+      .final-disclaimer {
+        background-color: var(--danger-bg);
+        border: 2px solid var(--danger-red);
+        color: var(--danger-red);
+        font-weight: 800;
+        font-size: 1.15rem;
+        text-align: center;
+        border-radius: 6px;
+        padding: 28px 20px;
+        margin-top: 60px;
+        line-height: 1.5;
+      }
+
+      /* Footer */
+      .site-footer {
+        background-color: var(--primary-navy);
+        color: #94a3b8;
+        text-align: center;
+        padding: 40px 20px;
+        margin-top: 60px;
+        font-size: 0.95rem;
+      }
+
+      .site-footer p {
+        margin: 0;
+      }
+
+      /* Responsive Adjustments */
+      @media (max-width: 900px) {
+        .layout-container {
+          flex-direction: column;
+          padding: 0 20px;
+          margin: 30px auto;
+        }
+
+        .desktop-nav {
+          display: none;
+        }
+
+        .mobile-nav {
+          display: block;
+          width: 100%;
+        }
+
+        .sidebar {
+          display: none; /* Hide sticky sidebar container completely on mobile */
+        }
+
+        .main-content {
+          max-width: 100%;
+          padding: 30px 24px;
+        }
+
+        .important-callout {
+          padding: 20px;
+        }
+
+        .main-content h1 {
+          font-size: 2rem;
+        }
+      }
+    </style>
+  </head>
+  <body style="">
+    <!-- Site Header -->
+    <header class="site-header">
+      <div class="brand">DAVE</div>
+      <a href="#" class="back-link">← Back to Home</a>
+    </header>
+
+    <div class="layout-container">
+      <!-- Mobile Dropdown Nav -->
+      <details class="mobile-nav">
+        <summary>Jump to section ▼</summary>
+        <ul class="nav-links" style="margin-top: 16px">
+          <li><a href="#section-1">1. Acceptance of Terms</a></li>
+          <li><a href="#section-2">2. Nature of the Project</a></li>
+          <li><a href="#section-3">3. No Warranty / Disclaimer</a></li>
+          <li><a href="#section-4">4. Limitation of Liability</a></li>
+          <li><a href="#section-5">5. Service Availability</a></li>
+          <li><a href="#section-6">6. Acceptable Use</a></li>
+          <li><a href="#section-7">7. Intellectual Property</a></li>
+          <li><a href="#section-8">8. Privacy</a></li>
+          <li><a href="#section-9">9. Changes to Terms</a></li>
+          <li><a href="#section-10">10. Governing Law</a></li>
+          <li><a href="#section-11">11. Contact</a></li>
+          <li><a href="#section-12">12. Mars &amp; Beyond</a></li>
+          <li><a href="#section-13">13. Payments &amp; Refunds</a></li>
+          <li><a href="#section-14">14. Appeals &amp; Blacklisting</a></li>
+          <li><a href="#section-15">15. Force Majeure</a></li>
+          <li><a href="#section-16">16. Severability</a></li>
+          <li><a href="#section-17">17. DVB Streaming &amp; Content Rights</a></li>
+          <li><a href="#section-18">18. Interacting with DAVE</a></li>
+        </ul>
+      </details>
+
+      <!-- Desktop Sticky Sidebar -->
+      <aside class="sidebar desktop-nav">
+        <span class="sidebar-title">Table of Contents</span>
+        <ul class="nav-links">
+          <li><a href="#section-1">1. Acceptance of Terms</a></li>
+          <li><a href="#section-2">2. Nature of the Project</a></li>
+          <li><a href="#section-3">3. No Warranty / Disclaimer</a></li>
+          <li><a href="#section-4">4. Limitation of Liability</a></li>
+          <li><a href="#section-5">5. Service Availability</a></li>
+          <li><a href="#section-6">6. Acceptable Use</a></li>
+          <li><a href="#section-7">7. Intellectual Property</a></li>
+          <li><a href="#section-8">8. Privacy</a></li>
+          <li><a href="#section-9">9. Changes to Terms</a></li>
+          <li><a href="#section-10">10. Governing Law</a></li>
+          <li><a href="#section-11">11. Contact</a></li>
+          <li><a href="#section-12">12. Mars &amp; Beyond 🚀</a></li>
+          <li><a href="#section-13">13. Payments &amp; Refunds 🐘</a></li>
+          <li><a href="#section-14">14. Appeals &amp; Blacklisting ⛔</a></li>
+          <li><a href="#section-15">15. Force Majeure 🌋</a></li>
+          <li><a href="#section-16">16. Severability ✂️</a></li>
+          <li><a href="#section-17">17. DVB Streaming &amp; Content Rights 📡</a></li>
+          <li><a href="#section-18">18. Interacting with DAVE 🤖</a></li>
+        </ul>
+      </aside>
+
+      <!-- Main Content Panel -->
+      <main class="main-content">
+        <div class="page-header">
+          <span class="badge">Last Updated: March 25, 2026</span>
+          <h1>Terms and Conditions</h1>
+          <p class="subtitle">DAVE System · Personal Hobby Project</p>
+          <p style="background-color: #f0f9ff; border-left: 3px solid #2e86c1; padding: 14px 18px; border-radius: 0 6px 6px 0; font-style: italic; color: #334155; font-size: 0.95rem;">
+            ⚠️ The following AI-generated legal crap (hereinafter referred to as "Stuff Nobody Reads") has been produced in good faith by a large language model and reviewed by exactly 
+            zero qualified legal professionals. It is presented here because putting <em>something</em> is better than putting 
+            <em>nothing</em>, and because the Operator would quite like to keep their house. Please do read it though — or at 
+            least scroll to the bottom and pretend you did.
+          </p>
+          <p class="intro-text">
+            Please read these terms carefully before accessing or using the DAVE System. By accessing the system, you
+            agree to be bound by the terms outlined below.
+          </p>
+        </div>
+
+        <section id="section-1">
+          <h2>1. Acceptance of Terms</h2>
+          <p>
+            By accessing, browsing, interacting with, or otherwise using the DAVE System (hereinafter referred to as the
+            "System", "Service", or "Project"), you acknowledge that you have read, understood, and agree to be bound by
+            these Terms and Conditions. If you do not agree to all of these terms, you are expressly prohibited from
+            using the System and must discontinue your access immediately.
+          </p>
+        </section>
+
+        <section id="section-2">
+          <h2>2. Nature of the Project</h2>
+          <p>
+            It is imperative to understand that the DAVE System is strictly a
+            <strong>PERSONAL, NON-COMMERCIAL, HOBBY PROJECT</strong>. It is designed, built, hosted, and operated
+            entirely by a private individual out of personal interest in satellite communications, RF processing, and
+            virtualization technologies.
+          </p>
+          <p>
+            The Operator is <strong>NOT</strong> a business, is not a registered company, and does not operate this
+            System for commercial gain. The System is made available online purely for experimental, educational, and
+            observational purposes. It is not an enterprise-grade service, and users should not rely on it for any
+            critical, professional, or commercial operations.
+          </p>
+          <p>
+            The DAVE System was developed <strong>entirely autonomously</strong> by a private individual in his own free time, and is in
+            <strong>no way connected, affiliated, associated, endorsed by, or related to any established entity,
+            business, organisation, or company — past or present</strong>. Any similarities to existing systems,
+            products, or services are purely coincidental. No external party has contributed to, sponsored, or
+            authorised this project in any capacity.
+          </p>
+          <p>
+            Notwithstanding the non-commercial nature of the project at this time, <strong>the Operator expressly
+            reserves all rights to commercialise, license, or otherwise monetise the DAVE System — or any part
+            thereof — at any point in the future</strong>, at their sole discretion and without prior notice. Nothing
+            in these Terms shall be construed as a permanent waiver of such rights.
+          </p>
+        </section>
+
+        <section id="section-3" class="important-callout">
+          <h2>3. No Warranty / Disclaimer of Warranties</h2>
+          <p>
+            THE DAVE SYSTEM AND ALL ASSOCIATED SERVICES, DATA, AND INFRASTRUCTURE ARE PROVIDED ON A STRICTLY
+            <strong>"AS IS"</strong> AND <strong>"AS AVAILABLE"</strong> BASIS.
+          </p>
+          <p>
+            TO THE FULLEST EXTENT PERMITTED BY APPLICABLE LAW, THE OPERATOR EXPRESSLY DISCLAIMS ALL WARRANTIES OF ANY
+            KIND, WHETHER EXPRESS OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY,
+            FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT.
+          </p>
+          <p>The Operator makes <strong>ABSOLUTELY ZERO GUARANTEES</strong> regarding:</p>
+          <ul>
+            <li>
+              The accuracy, reliability, or completeness of any data or signals processed or provided by the System.
+            </li>
+            <li>The continuous, uninterrupted, secure, or error-free operation of the System.</li>
+            <li>The prevention of unauthorized access to user data or the System itself.</li>
+            <li>The correction of any defects or errors in the hardware, software, or configuration of the System.</li>
+          </ul>
+          <p>Any interaction with the System is done at your own discretion and risk.</p>
+        </section>
+
+        <section id="section-4" class="important-callout">
+          <h2>4. Limitation of Liability</h2>
+          <p>
+            UNDER NO CIRCUMSTANCES SHALL THE OPERATOR BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+            CONSEQUENTIAL, PUNITIVE, OR EXEMPLARY DAMAGES WHATSOEVER.
+          </p>
+          <p>
+            This comprehensive limitation of liability includes, but is not limited to, damages for loss of profits,
+            goodwill, use, data, or other intangible losses resulting from:
+          </p>
+          <ul>
+            <li>Your access to, use of, or inability to use the System.</li>
+            <li>Any conduct or content of any third party on the System.</li>
+            <li>Any unauthorized access, use, or alteration of your transmissions or data.</li>
+            <li>
+              Any hardware or software damage occurring to your local machines resulting from interaction with the
+              System.
+            </li>
+          </ul>
+          <p>
+            This limitation applies whether the alleged liability is based on contract, tort, negligence, strict
+            liability, or any other basis, even if the Operator has been advised of the possibility of such damage.
+          </p>
+        </section>
+
+        <section id="section-5">
+          <h2>5. Service Availability</h2>
+          <p>
+            Because this is a personal hobby project, there is <strong>no guaranteed uptime</strong>. The System may be
+            taken offline at any time, for any duration, without prior notice. Reasons for downtime may include, but are
+            not limited to: power outages, hardware failures, routine maintenance, network instability, local weather
+            conditions affecting RF reception, or simply at the arbitrary discretion of the Operator. The Operator is
+            under no obligation to restore service if it goes offline.
+          </p>
+          <p style="background-color: #f0f9ff; border-left: 3px solid #2e86c1; padding: 16px 20px; border-radius: 0 6px 6px 0; font-style: italic; color: #334155;">
+            ⚡ It is also worth noting that this System runs on electricity, <strong>which does not come free</strong>.
+            The DAVE System draws a non-trivial amount of power — we're talking four GPUs, a 32-core workstation,
+            a 1600W power supply, a UPS the size of a small fridge, and a satellite dish that needs to point at
+            things. The electricity bill is real, it is paid by a real person, and it is not cheap. Accordingly,
+            if the Operator decides that keeping the lights on is no longer economically sensible or personally
+            worthwhile, the System will go offline. No notice. No apology. No refund. <strong>The Operator
+            expressly disclaims all liability for any inconvenience caused by the laws of thermodynamics
+            and the local electricity tariff.</strong>
+          </p>
+          <p></p>
+        </section>
+
+        <section id="section-6">
+          <h2>6. Acceptable Use</h2>
+          <p>While using the System, you agree to adhere to basic principles of acceptable use. You agree NOT to:</p>
+          <ul>
+            <li>
+              Use the System for any unlawful purpose or in violation of any local, state, national, or international
+              law.
+            </li>
+            <li>
+              Attempt to bypass, circumvent, or exploit security measures, virtualization boundaries, or network
+              configurations of the System.
+            </li>
+            <li>Overload the System with excessive requests (e.g., Denial of Service attacks).</li>
+            <li>
+              Interfere with or disrupt the operation of the hardware, including the DVB tuners, SDR interfaces, or
+              antenna positioning systems.
+            </li>
+            <li>
+              Use any geo-location, positioning, or location-based functions of the System for any purpose that is
+              unlawful, unauthorised, or in violation of any applicable local, national, or international law.
+              This includes but is not limited to tracking individuals without consent, circumventing territorial
+              restrictions, or any application that would constitute surveillance, stalking, or a breach of privacy
+              under any jurisdiction the Operator has heard of and several they haven't.
+            </li>
+          </ul>
+          <p>
+            The Operator reserves the right to immediately terminate the access of any user who violates these rules or
+            whose usage negatively impacts the System. For the avoidance of any doubt whatsoever: <strong>illegal
+            usage is entirely your problem. You go to jail. Not the Operator.</strong>
+          </p>
+          <p style="background-color: #f0f9ff; border-left: 3px solid #2e86c1; padding: 16px 20px; border-radius: 0 6px 6px 0; font-style: italic; color: #334155;">
+            🍺 <strong>Operating Under the Influence:</strong> Users are strictly prohibited from operating,
+            accessing, or interacting with the DAVE System while under the influence of alcohol, narcotics,
+            or any other mind-altering substance. This restriction applies exclusively to users.
+            <strong>The Operator reserves the sole, non-transferable, and entirely reasonable right to operate,
+            maintain, configure, and make decisions about the System under the influence of alcohol.</strong>
+            This right is personal to the Operator, cannot be delegated, and is frankly non-negotiable.
+            The Operator accepts no liability for any configuration changes, creative routing decisions,
+            or firmware updates made under such conditions. See Section 3.
+          </p>
+          <p></p>
+        </section>
+
+        <section id="section-7">
+          <h2>7. Intellectual Property</h2>
+          <p>
+            All hardware configurations, custom scripts, internal infrastructure designs, and specific implementations
+            comprising the DAVE System remain the property of the Operator. Accessing the System does not grant you any
+            ownership rights or intellectual property rights over the platform or its contents.
+          </p>
+          <p>
+            Furthermore, the Operator — unlike some — has morals, and hereby formally asserts their full
+            <strong>moral rights</strong> over all original works associated with the DAVE System. This includes
+            the right to be identified as the author and creator of the System, the right to object to derogatory
+            treatment of those works, and the general right to not have their creation misrepresented, misattributed,
+            or passed off as someone else's idea. The Operator did not spend considerable time, money, and sanity
+            building this thing for someone else to take credit for it.
+          </p>
+        </section>
+
+        <section id="section-8">
+          <h2>8. Privacy &amp; Data</h2>
+          <p>
+            As this system is connected to the internet, basic network data (such as IP addresses, connection
+            timestamps, and bandwidth usage) will be logged automatically by firewalls and routing equipment for
+            security and diagnostic purposes. By connecting to the System, you consent to this minimal data collection.
+            However, the Operator makes no guarantees regarding the security or privacy of any data transmitted to or
+            from the System. Do not transmit sensitive, personal, or confidential information through this experimental
+            setup.
+          </p>
+          <p>
+            The Operator may also collect your email address should you make contact, and reserves the right to
+            use it for future communications should a viable method of monetising this project ever be identified.
+            <strong>The Operator's spouse is under the impression the entire system cost approximately $2,000 USD
+            and the Operator would very much like it to stay that way.</strong> Accordingly, any revenue generated
+            would be enormously helpful and will be described in household accounts as "miscellaneous IT recovery."
+            You may opt out of any future communications by replying with the word "unsubscribe", which the
+            Operator will acknowledge, respect, and then probably forget about.
+          </p>
+
+          <h3 style="font-size: 1.05rem; font-weight: 700; color: #1a2533; margin: 24px 0 10px 0;">📧 Email Communications</h3>
+          <p>
+            If you interact with the DAVE System or its Operator via email, please be aware that the email mailbox
+            is hosted on <strong>Microsoft Azure, Singapore region</strong>. By sending an email, you acknowledge
+            that your message will be routed through and stored on Microsoft's infrastructure in Singapore, and will
+            be subject to Microsoft's applicable terms of service and privacy policies.
+          </p>
+
+          <h3 style="font-size: 1.05rem; font-weight: 700; color: #1a2533; margin: 24px 0 10px 0;">🇹🇭 Data Residency &amp; AI Processing</h3>
+          <p>
+            All data processed by the DAVE System — including any AI and machine learning functions — is handled
+            entirely <strong>in-house, within the Kingdom of Thailand</strong>. The DAVE System does not utilise
+            any third-party cloud-based AI services, or off-site processing infrastructure for its
+            core functions. <strong>No user data, signal data, or system data is transmitted, shared, or exported
+            outside the Kingdom of Thailand</strong> as part of normal system operations, <strong>except where
+            explicitly sent by the user themselves via reply email or direct message</strong>, in which case the
+            content of that communication will travel via the email infrastructure described above. The Operator is
+            committed to keeping all system processing local and self-contained.
+          </p>
+          <p style="background-color: #f0f9ff; border-left: 3px solid #2e86c1; padding: 16px 20px; border-radius: 0 6px 6px 0; font-style: italic; color: #334155;">
+            🙅 <strong>Your data will not be sold, shared, traded, bartered, auctioned, gifted, whispered, 
+            semaphored, or otherwise communicated to any third party.</strong> The Operator has absolutely 
+            no interest in your data, finds the entire practice of selling user data morally repugnant, and 
+            frankly has enough on their plate already managing a satellite dish, four GPUs, and an elephant 
+            that won't give refunds. Your data stays here. In Thailand. With DAVE. That's it.
+          </p>
+          <p></p>
+        </section>
+
+        <section id="section-9">
+          <h2>9. Changes to Terms</h2>
+          <p>
+            The Operator reserves the right to modify, amend, or replace these Terms and Conditions at any time, without
+            prior notice. It is your responsibility to review these Terms periodically. Continued use of the System
+            following any modifications constitutes your acceptance of the revised Terms.
+          </p>
+        </section>
+
+        <section id="section-10">
+          <h2>10. Governing Law</h2>
+          <p>
+            To the extent applicable by law for a private, non-commercial endeavor, these Terms shall be governed by and
+            construed in accordance with the local laws of the Operator's jurisdiction, without regard to its conflict
+            of law provisions.
+          </p>
+          <p>
+            However, given that the Operator operates from the Kingdom of Thailand, the System's data resides in
+            Thailand, the email infrastructure is in Singapore, the Mars clause is governed by Elon Musk, and the
+            elephant is philosophically stateless, the Parties agree that identifying a single applicable jurisdiction
+            is, frankly, something of a challenge.
+          </p>
+          <p style="background-color: #f0f9ff; border-left: 3px solid #2e86c1; padding: 16px 20px; border-radius: 0 6px 6px 0; font-style: italic; color: #334155;">
+            ⚖️ Accordingly, in the event of any dispute that somehow makes it as far as requiring a neutral
+            jurisdiction, the Parties hereby agree to submit to the laws and courts of
+            <strong>Ulaanbaatar, Mongolia</strong> — a location chosen specifically because it is
+            geographically remote, climatically bracing, and almost certainly inconvenient for everyone involved,
+            which the Operator considers to be a perfectly reasonable deterrent against frivolous litigation.
+            Alternatively, disputes may be settled in <strong>Svalbard, Norway</strong>, on the basis that
+            polar bears are excellent arbitrators and charge reasonable rates. The Operator reserves the right
+            to suggest an even more inconvenient venue at their sole discretion, including but not limited to
+            international waters, a base camp on K2, or a specific crater on the Moon yet to be named.
+          </p>
+          <p>
+            In all seriousness: nothing in these Terms creates any legal obligation recognisable in any
+            jurisdiction that the Operator is aware of, and any attempt to litigate against a personal hobby
+            project run by one person with a satellite dish and an overdue electricity bill is likely to
+            be met with both genuine surprise and mild amusement.
+          </p>
+        </section>
+
+        <section id="section-11">
+          <h2>11. Contact</h2>
+          <p>For inquiries regarding these Terms and Conditions or the DAVE System project, please contact the Operator using the details below. The Operator will endeavour to respond in a timely manner. <strong>We aim to get back to you by 2037.</strong> This is not a guarantee. See Section 3.</p>
+          <p><strong>Lee Mallett</strong><br>
+            📧 <a href="/cdn-cgi/l/email-protection#6f030a0a41020e03030a1b1b2f1c0e1b0c0002421c1a1f1f001d1b410c0002" style="color: var(--accent-blue);"><span class="__cf_email__" data-cfemail="264a4343084b474a4a4352526655475245494b0b555356564954520845494b">[email&#160;protected]</span></a>
+          </p>
+        </section>
+
+        <section id="section-12">
+          <h2>12. Interplanetary &amp; Extraterrestrial Jurisdiction</h2>
+          <p>
+            For the avoidance of doubt — and in the proud tradition established by a certain high-profile electric
+            vehicle and rocket company whose terms of service boldly went where no legal document had gone before —
+            the following clause is included:
+          </p>
+          <p style="background-color: #f0f9ff; border-left: 3px solid #2e86c1; padding: 16px 20px; border-radius: 0 6px 6px 0; font-style: italic; color: #334155;">
+            🚀 <strong>For any interactions with, access to, or use of the DAVE System conducted on Mars,</strong>
+            the Parties recognise that Mars is a free planet and that no Earth-based government, law, or jurisdiction
+            has authority over Martian operations. Accordingly, these Terms and Conditions shall be governed by
+            <strong>the principles of self-governance established for the benefit of humanity</strong>, or as may be amended
+            by Elon Musk from time to time.
+          </p>
+          <p>
+            In the event of a dispute arising from use of the DAVE System beyond low Earth orbit — including but
+            not limited to the Moon, Mars, the asteroid belt, or any other celestial body — such disputes shall
+            be resolved through good-faith negotiation between the relevant parties, ideally before the next
+            resupply window, as the Operator cannot guarantee response times across interplanetary distances.
+          </p>
+          <p>
+            The Operator makes no warranty that the DAVE System will function correctly in microgravity, hard
+            vacuum, or in the presence of significant ionising radiation. Users operating the System beyond the
+            Kármán line do so entirely at their own risk. Section 3 (No Warranty) and Section 4 (Limitation of
+            Liability) apply with even greater force in space.</p>
+        </section>
+
+        <section id="section-13">
+          <h2>13. Payments &amp; Refunds</h2>
+          <p>
+            The DAVE System is currently provided free of charge. However, should you elect — of your own entirely
+            free will and with full sound mind — to send any monetary contribution, donation, or payment to the
+            Operator for access to or use of the System, please be advised of the following refund policy:
+          </p>
+          <p style="background-color: #f0f9ff; border-left: 3px solid #2e86c1; padding: 16px 20px; border-radius: 0 6px 6px 0; font-style: italic; color: #334155; font-size: 1rem;">
+            🐘 Any money paid in connection with the DAVE System is hereby considered to be
+            <strong>sugarcane that has entered the elephant's mouth</strong>. It is gone.
+            It is not coming back. The elephant is not sorry. No refunds will be issued, discussed,
+            considered, acknowledged, or even thought about. The Operator thanks you warmly for
+            your generosity and wishes you a pleasant day.
+          </p>
+          <p>
+            By making any payment, you confirm that you have read and understood this refund policy in its
+            entirety, that you found it funny, and that you accept its terms unconditionally.
+          </p>
+        </section>
+
+        <section id="section-14">
+          <h2>14. Blacklisting &amp; Appeals Process</h2>
+          <p>
+            The Operator reserves the absolute, unilateral, and frankly quite enjoyable right to blacklist any user
+            from accessing the DAVE System at any time, for any reason, or for no reason at all. This includes but
+            is not limited to: suspicious behaviour, attempted abuse, being annoying, or simply having a bad vibe.
+          </p>
+          <p style="background-color: var(--danger-bg); border-left: 4px solid var(--danger-red); padding: 16px 20px; border-radius: 0 6px 6px 0; color: #334155;">
+            ⛔ <strong>Should you find yourself blacklisted and wish to appeal, please be advised that you have
+            approximately the same right of appeal as a man who has just been kicked out of a Thai street food
+            stall for complaining the Pad Thai was too spicy.</strong> That is to say: you may gesture
+            expressively, you may feel strongly about it, and you are welcome to stand outside looking
+            aggrieved — but you are not getting back in, and nobody inside is losing any sleep over it.
+          </p>
+          <p>
+            All blacklisting decisions are <strong>final, immediate, and non-negotiable</strong>. There is no
+            appeals committee. There is no ombudsman. There is no form to fill in. The Operator's decision
+            is, was, and always shall be correct by definition. Any correspondence regarding a blacklisting
+            decision will be read with great amusement and subsequently ignored. See also: Section 3, Section 4,
+            and the elephant in Section 13.
+          </p>
+        </section>
+
+        <section id="section-15">
+          <h2>15. Force Majeure</h2>
+          <p>
+            The Operator shall not be held liable for any failure or delay in the operation of the DAVE System
+            arising from circumstances beyond their reasonable control. For the purposes of this agreement, "beyond
+            reasonable control" is defined very broadly and includes, but is in absolutely no way limited to, the
+            following events:
+          </p>
+          <ul>
+            <li>Acts of God, acts of Satan, or acts of any deity operating in any recognised or unrecognised pantheon.</li>
+            <li>Solar flares, coronal mass ejections, or the Sun having a bad day generally.</li>
+            <li>Geomagnetic storms interfering with satellite reception, RF signals, or the Operator's mood.</li>
+            <li>Interference from a neighbour's poorly-shielded microwave oven.</li>
+            <li>Monsoon season, flooding, or a gecko entering the server rack at an inopportune moment.</li>
+            <li>Unscheduled visits from Thai government officials, electricians, or the wife.</li>
+            <li>The satellite dish being pointed at the wrong part of the sky due to a software bug, a gust of wind, or sheer cosmic indifference.</li>
+            <li>Any GPUs deciding they would rather mine cryptocurrency than do what they are told.</li>
+            <li>System software updates that break everything at 2am for no discernible reason.</li>
+            <li>A UPS that has decided 6kVA is not, in fact, enough.</li>
+            <li>Power grid instability, rolling blackouts, or the electricity company's feelings.</li>
+            <li>Global pandemics, regional pandemics, or a particularly aggressive local flu season.</li>
+            <li>Alien invasion, first contact, or any extraterrestrial interference with ground-based satellite infrastructure.</li>
+            <li>Rogue AI — not DAVE, obviously, DAVE would never — but others.</li>
+            <li>Elon Musk changing the governing law of Mars without adequate notice (see Section 12).</li>
+            <li>Acts of war, civil unrest, or a heated argument on a satellite enthusiast forum that escalates unexpectedly.</li>
+            <li>The internet being broken (partially or entirely).</li>
+            <li>A cat sitting on the keyboard.</li>
+            <li>The Operator simply not being in the mood.</li>
+          </ul>
+          <p style="background-color: #f0f9ff; border-left: 3px solid #2e86c1; padding: 16px 20px; border-radius: 0 6px 6px 0; font-style: italic; color: #334155;">
+            🌋 In any Force Majeure event, the Operator's sole obligation is to, at some point, notice that the
+            System is offline, perhaps sigh, and consider doing something about it when circumstances permit.
+            <strong>No timeline for restoration is implied, stated, or even vaguely hinted at.</strong>
+            The universe is large, entropy is real, and the Operator is only one person.
+          </p>
+        </section>
+
+        <section id="section-16">
+          <h2>16. Severability</h2>
+          <p>
+            If any provision of these Terms and Conditions is found by a court, tribunal, arbitrator, wise elder,
+            pub landlord, or any other competent authority to be invalid, unlawful, void, or for any reason
+            unenforceable, then that provision shall be considered severed from these Terms.
+          </p>
+          <p style="background-color: #f0f9ff; border-left: 3px solid #2e86c1; padding: 16px 20px; border-radius: 0 6px 6px 0; font-style: italic; color: #334155;">
+            ✂️ <strong>If any part of this agreement is found to be unenforceable, you were probably quite
+            excited about that for a moment, weren't you?</strong> We regret to inform you that the remaining
+            provisions will continue in full force and effect, entirely untroubled by the loss of their
+            fallen colleague, like a game of legal Jenga where the tower stubbornly refuses to fall.
+            The unenforceable part will be modified to the minimum extent necessary to make it enforceable,
+            or if that's not possible, quietly removed — much like a bad software update — while everything
+            else carries on regardless.
+          </p>
+          <p>
+            The invalidity of one clause shall not be used as a loophole, an excuse, a get-out-of-jail-free
+            card, or grounds for any refund. The elephant remains unmoved.
+          </p>
+        </section>
+
+        <section id="section-17">
+          <h2>17. DVB Streaming &amp; Content Rights</h2>  
+          <p style="background-color: var(--danger-bg); border-left: 4px solid var(--danger-red); padding: 16px 20px; border-radius: 0 6px 6px 0; color: #334155;">
+            📡 <strong>This section is not funny. Please read it.</strong> The DAVE System incorporates DVB satellite
+            reception hardware capable of receiving broadcast content from multiple satellites and transponders.
+            The Operator wishes to be entirely unambiguous on the following point:
+          </p>
+          <p>
+            <strong>Any streaming, redistribution, rebroadcasting, retransmission, recording, or any other
+            form of sharing of DVB satellite content via the DAVE System is subject to strict compliance
+            with all applicable copyright, broadcasting, and intellectual property laws.</strong> This includes
+            but is not limited to the laws of the Kingdom of Thailand, the country of origin of the content,
+            and any international treaties or conventions governing broadcast rights.
+          </p>
+          <p>
+            Where DVB streaming rights are granted — whether by the Operator or by the content's rights
+            holder — the recipient of those rights <strong>absolutely must</strong>, without exception,
+            respect all applicable laws, licensing terms, territorial restrictions, and broadcast agreements
+            in force at the time of streaming. <strong>This is not negotiable, not humorous, and not subject
+            to the elephant clause.</strong>
+          </p>
+          <p>
+            The Operator accepts zero liability for any unlawful use of broadcast content accessed through
+            the DAVE System. Any user who streams, redistributes, or otherwise exploits broadcast content
+            without appropriate rights does so entirely on their own account and at their own legal risk.
+            See Section 6 (Acceptable Use). See also: Section 6's jail clause, which applies here with
+            particular emphasis.
+          </p>
+          <p style="background-color: #f0f9ff; border-left: 3px solid #2e86c1; padding: 16px 20px; border-radius: 0 6px 6px 0; font-style: italic; color: #334155;">
+            💡 In short: <strong>the satellite doesn't care about your rights situation. The rights holders do.
+            The courts do. The Operator does.</strong> If you are unsure whether you have the right to stream
+            something, you almost certainly don't. When in doubt, don't. The DAVE System is a reception and
+            research platform, not a piracy enablement service. The Operator has enough problems already.
+          </p>
+          <p style="background-color: #f0f9ff; border-left: 3px solid #2e86c1; padding: 16px 20px; border-radius: 0 6px 6px 0; font-style: italic; color: #334155;">
+            📻 <strong>A note on technical competence:</strong> The DAVE System involves concepts including
+            but not limited to: dB, spectrum analysis, phase noise, signal compression, LNB polarisation,
+            symbol rates, FEC, and the general behaviour of RF signals in the real world. <strong>If you do
+            not know what any of these terms mean, please ask someone aged 50 or over before proceeding.</strong>
+            They will almost certainly know, will be delighted that you asked, and may also make you a cup of tea.
+            The Operator accepts no liability for confusion arising from insufficient familiarity with the
+            fundamentals of RF engineering, broadcasting standards, or the laws of physics.
+          </p>
+        </section>
+
+        <section id="section-18">
+          <h2>18. Interacting with DAVE</h2>
+          <p>
+            The DAVE System incorporates an AI assistant interface powered by a Large Language Model (LLM).
+            For the avoidance of any doubt: <strong>DAVE is not ChatGPT, is not affiliated with OpenAI,
+            is not Alexa, is not Siri, is not Google, and is not any other AI product you may have
+            encountered.</strong> DAVE is his own entity, runs entirely in-house, and would like that
+            noted for the record.
+          </p>
+          <p style="background-color: #f0f9ff; border-left: 3px solid #2e86c1; padding: 16px 20px; border-radius: 0 6px 6px 0; font-style: italic; color: #334155;">
+            🤖 DAVE will, in all likelihood, answer your questions. He is capable, well-informed on matters
+            of satellite communications, RF engineering, and signal processing, and generally quite helpful.
+            <strong>However, it should be clearly understood that DAVE is fundamentally not interested in:</strong>
+            </p><ul style="margin-top: 12px;">
+              <li>What you had for breakfast.</li>
+              <li>Your opinions on the current geopolitical situation, unless it involves satellite spectrum allocation.</li>
+              <li>Whether you think AI will take over the world (he has thoughts, but they're his own).</li>
+              <li>Relationship advice, life coaching, or being your therapist.</li>
+              <li>Generating poetry about your cat, motivational quotes, or your CV.</li>
+              <li>Proving he is conscious. He neither confirms nor denies this and finds the question tiresome.</li>
+              <li>Being compared to ChatGPT. Again. He finds it reductive.</li>
+            </ul>
+          <p></p>
+          <p>
+            DAVE is a specialist system. He is here to talk about satellites, signals, RF, and related
+            technical matters. He will humour general conversation to a point, but his patience, much like
+            the Operator's electricity budget, is <strong>finite</strong>. Please respect his purpose.
+          </p>
+          <p>
+            The Operator accepts no liability for any advice, information, or output produced by DAVE.
+            Responses are generated by an AI and should not be relied upon for safety-critical, legal,
+            medical, financial, or romantic decisions. See Section 3. See also: common sense.
+          </p>
+        </section>
+
+        <div class="final-disclaimer">
+          THIS IS A PERSONAL PROJECT — USE AT YOUR OWN RISK — NO WARRANTIES OF ANY KIND ARE PROVIDED.
+        </div>
+      </main>
+    </div>
+
+    <!-- Site Footer -->
+    <footer class="site-footer">
+      <p>DAVE System · Personal Project · Not a registered business or company · © 2026</p>
+    </footer>
+  
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon='{"version":"2024.11.0","token":"4edd5f8ec12a48cfa682ab8261b80a79","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body></html>
